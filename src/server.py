@@ -21,9 +21,11 @@ def selenoid():
     say_alert()
     time.sleep(0.3)
     a.update_pin(12, True)
+    a.update_pin(13, True)
     time.sleep(0.5)
     a.update_pin(12, False)
+    a.update_pin(13, False)
     return json.dumps({'status': 200})
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0')
